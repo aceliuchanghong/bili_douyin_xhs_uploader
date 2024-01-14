@@ -8,23 +8,23 @@ proxies = {
 LOG_LEVEL = "INFO"
 # 上传网站属性
 bili_config = {
-    "cookie_path": "../cookies/bili_cookies.json",
+    "cookie_path": "cookies/bili_cookies.json",
     "up_site": "https://member.bilibili.com/platform/upload/video/frame",
     "check_site": "https://member.bilibili.com/platform/upload/video/frame?page_from=creative_home_top_upload"
 }
 douyin_config = {
-    "cookie_path": "../cookies/douyin_cookies.json",
+    "cookie_path": "cookies/douyin_cookies.json",
     "up_site": "https://creator.douyin.com/creator-micro/content/upload",
     "up_site2": "https://creator.douyin.com/creator-micro/content/publish?enter_from=publish_page",
     "check_site": "https://creator.douyin.com/creator-micro/content/manage"
 }
 xhs_config = {
-    "cookie_path": "../cookies/xhs_cookies.json",
+    "cookie_path": "cookies/xhs_cookies.json",
     "up_site": "https://creator.xiaohongshu.com/publish/publish",
     "check_site": "https://creator.xiaohongshu.com/publish/success?source&bind_status=not_bind"
 }
 # sqlite
-db_path = "../log/media_uploader.db"
+db_path = "log/media_uploader.db"
 create_table_sql = """
 CREATE TABLE IF NOT EXISTS media_upload_info
 (platform TEXT,video_name TEXT,download_date TEXT, video_url TEXT, video_path TEXT, remark1 TEXT, description TEXT)

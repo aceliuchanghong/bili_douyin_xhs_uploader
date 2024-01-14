@@ -42,25 +42,26 @@ class VerboseCursor(sqlite3.Cursor):
             try:
                 super().execute(sql, parameters)
             except sqlite3.Error as e:
-                print(f"An error occurred: {e}")
+                print(f"execute2:An error occurred: {e}")
                 return False
             return True
         try:
             super().execute(sql)
         except sqlite3.Error as e:
-            print(f"An error occurred: {e}")
+            print(f"execute:An error occurred: {e}")
             return False
         return True
 
 
-def excute_sqlite_sql(sql, param=None):
+def excute_sqlite_sql(sql, param=None, should_print=False):
     conn = sqlite3.connect(config.db_path)
     c = VerboseCursor(conn)
     boolP = c.execute(sql, param)
     if boolP:
         results = c.fetchall()
-        for row in results:
-            print(row)
+        if should_print:
+            for row in results:
+                print(row)
         conn.commit()
     else:
         conn.rollback()
@@ -70,8 +71,6 @@ def excute_sqlite_sql(sql, param=None):
     return results
 
 
-if __name__ == "__main__":
-    # 执行
-    # excute_sqlite_sql(config.table_select_sql2)
-    # excute_sqlite_sql(config.table_add_sql,("xhs", "00", "20240114", "htts://00.mp4", "../files/test/00.mp4", "", "测试"))
-    excute_sqlite_sql(config.table_select_url_sql, ("xhs", "htts://00.mp4"))
+def check(platform, url, should_print=False):
+    ans = excute_sqlite_sql(config.table_select_url_count_sql, (platform, url), should_print)
+    return ans[0][0]

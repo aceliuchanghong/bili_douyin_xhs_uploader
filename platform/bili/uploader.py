@@ -78,7 +78,7 @@ class BiliUploader(Upload):
                     await page.locator(
                         'div.form-item > div.submit-container > span.submit-add'
                     ).click()
-                    await asyncio.sleep(1)
+                    await asyncio.sleep(10)
                     element = page.locator('.step-des:has-text("稿件投递成功")')
                     count = await element.count()
                     if count == 1:
