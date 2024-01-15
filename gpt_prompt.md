@@ -8,6 +8,7 @@ bili_douyin_xhs_uploader/
 ├── gpt_prompt.md
 ├── main.py
 ├── requirements.txt
+├── test.py
 ├── cookies/
 ├── core/
 │   ├── config.py
@@ -18,7 +19,7 @@ bili_douyin_xhs_uploader/
 ├── log/
 │   ├── ftp_log.md
 │   └── media_uploader.db
-├── platform/
+├── platforms/
 │   ├── bili/
 │   │   └── uploader.py
 │   ├── douyin/
@@ -27,11 +28,6 @@ bili_douyin_xhs_uploader/
 │       └── uploader.py
 └── utils/
     └── util_sqlite.py
-```
-core/config.py
-```python
-PROXY = False
-LOG_LEVEL = "INFO"
 ```
 core/exceptions.py
 ```python
@@ -48,25 +44,23 @@ class VideoUploadError(UploadError):
 core/upload.py
 ```python
 import abc
-from playwright.sync_api import sync_playwright
+from core import config
+import logging
 class Upload(abc.ABC):
     def __init__(self):
-        self.playwright = sync_playwright().start()
-        self.browser = self.playwright.chromium.launch()
-        self.context = self.browser.new_context()
-        self.page = self.context.new_page()
+        self.logger = self._setup_logger()
+    def _setup_logger(self):
+        logger = logging.getLogger(self.__class__.__name__)
+        # 可以根据需要配置日志记录器，比如设置日志级别、格式和输出位置
+        logger.setLevel(config.LOG_LEVEL)
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+        return logger
     @abc.abstractmethod
     def upload_video(self, *args, **kwargs):
-        # Implement the logic for uploading a video to the platform
         pass
-    def close(self):
-        # Close the browser and clean up resources
-        self.browser.close()
-        self.playwright.stop()
-    def __enter__(self):
-        return self
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.close()
 ```
 main.py
 

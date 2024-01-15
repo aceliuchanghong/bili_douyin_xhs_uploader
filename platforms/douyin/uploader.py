@@ -4,7 +4,6 @@ from playwright.async_api import async_playwright
 import random
 from core import config
 from core.upload import Upload
-from core.exceptions import VideoUploadError
 from utils.util_sqlite import excute_sqlite_sql
 from datetime import datetime
 

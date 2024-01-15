@@ -23,15 +23,17 @@ bili_douyin_xhs_uploader/
 ├── main.py
 ├── requirements.txt
 ├── test.py
+├── cookies/
 ├── core/
 │   ├── config.py
 │   ├── exceptions.py
 │   ├── upload.py
 │   └── video_info.py
+├── files/
 ├── log/
 │   ├── ftp_log.md
 │   └── media_uploader.db
-├── platform/
+├── platforms/
 │   ├── bili/
 │   │   └── uploader.py
 │   ├── douyin/

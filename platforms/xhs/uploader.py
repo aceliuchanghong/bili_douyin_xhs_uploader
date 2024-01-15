@@ -4,7 +4,6 @@ from playwright.async_api import async_playwright
 import random
 from core import config
 from core.upload import Upload
-from core.exceptions import VideoUploadError
 from utils.util_sqlite import excute_sqlite_sql
 from datetime import datetime
 
@@ -47,7 +46,7 @@ class XhsUploader(Upload):
                 # 填写作品名称 简介 话题
                 self.logger.info(self.platform + ":设置标题")
                 up_title = video_name + "|" + random.choice(config.key_sentence)
-                await page.locator('//*[@id="publish-container"]/div/div[3]/div[2]/div[3]/input').fill(up_title)
+                await page.locator('//*[@id="publish-container"]/div/div[3]/div[2]/div[3]/input').fill(up_title[:19])
                 self.logger.info(self.platform + ":设置简介")
                 await page.locator('//*[@id="post-textarea"]').fill(description)
                 self.logger.info(self.platform + ":添加话题")
