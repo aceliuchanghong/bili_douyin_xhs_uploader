@@ -29,7 +29,7 @@ async def main(platform_name, video_url, video_path, video_name, description, he
     # Instantiate the correct uploader class
     uploader_class = UPLOADERS[platform_name]()
     try:
-        await uploader_class.upload_video(video_url, video_path, video_name, description, headless)
+        await uploader_class.upload_video(video_url, video_path, video_name, description, headless=headless)
     except Exception as e:
         print(f"MAIN:An error occurred: {e}")
 
@@ -43,7 +43,8 @@ if __name__ == "__main__":
     parser.add_argument('--video_path', required=True, help="Path to the video file.")
     parser.add_argument('--video_name', required=True, help="Title of the video.")
     parser.add_argument('--description', required=False, default="", help="Description of the video.")
-    parser.add_argument('--headless', action='store_true', help="Run in headless mode (default: %(default)s)",
+    parser.add_argument('--headless', required=False, action='store_true',
+                        help="Run in headless mode (default: %(default)s)",
                         default=False)
 
     # Parse the arguments
