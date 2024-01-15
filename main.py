@@ -4,12 +4,6 @@ from platforms.douyin.uploader import DouyinUploader
 from platforms.xhs.uploader import XhsUploader
 from utils.util_sqlite import check
 
-"""eg:
-python main.py --platforms xhs --video_url "https://test" --video_path "files/test/11.mp4" --video_name "我只在乎你鄧麗君" --description "我只在乎你鄧麗君 琵琶 演奏"
-python main.py --platforms douyin --video_url "https://test" --video_path "files/test/11.mp4" --video_name "我只在乎你鄧麗君" --description "我只在乎你鄧麗君 琵琶 演奏"
-python main.py --platforms bili --video_url "https://test" --video_path "files/test/11.mp4" --video_name "我只在乎你鄧麗君" --description "我只在乎你鄧麗君 琵琶 演奏"
-
-"""
 # Define a dictionary that maps platform names to their respective uploader classes
 UPLOADERS = {
     'bili': BiliUploader,
