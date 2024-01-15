@@ -69,16 +69,20 @@ class Upload(abc.ABC):
         self.close()
 ```
 main.py
+
 ```python
 import argparse
-from platform.bili.uploader import BiliUploader
-from platform.douyin.uploader import DouyinUploader
-from platform.xhs.uploader import XhsUploader
+from platforms.bili.uploader import BiliUploader
+from platforms.douyin.uploader import DouyinUploader
+from platforms.xhs.uploader import XhsUploader
+
 UPLOADERS = {
     'bili': BiliUploader,
     'douyin': DouyinUploader,
     'xhs': XhsUploader
 }
+
+
 def main(platform_name, video_path, title, description):
     if platform_name not in UPLOADERS:
         print(f"Unsupported platform: {platform_name}")
@@ -89,6 +93,8 @@ def main(platform_name, video_path, title, description):
         print(f"Video uploaded successfully to {platform_name}.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Upload videos to various platforms.")
     parser.add_argument('--platform', required=True,

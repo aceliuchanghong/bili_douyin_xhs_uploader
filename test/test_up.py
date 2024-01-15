@@ -1,6 +1,6 @@
-from platform.douyin.uploader import DouyinUploader
-from platform.xhs.uploader import XhsUploader
-from platform.bili.uploader import BiliUploader
+from platforms.douyin.uploader import DouyinUploader
+from platforms.xhs.uploader import XhsUploader
+from platforms.bili.uploader import BiliUploader
 import asyncio
 
 
