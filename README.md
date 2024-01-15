@@ -60,6 +60,7 @@ python main.py --platforms "bili" --video_url "https://test" --video_path "files
 ### Ubuntu
 ```shell
 python main.py --platforms "douyin" --video_url "https://test_ubuntu" --video_path "/home/aceliuchanghong/ftpfiles/liu/00.mp4" --video_name "你的身边有我们 你的背后是祖国" --description "你的身边有我们 你的背后是祖国" --headless
+python main.py --platforms "xhs" --video_url "https://test2" --video_path "files/test/00.mp4" --video_name "你的身边有我们 你的背后是祖国" --description "你的身边有我们 你的背后是祖国" --headless
 ```
 ### Q&A
 ```errorinfo
