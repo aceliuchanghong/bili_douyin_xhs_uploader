@@ -16,7 +16,8 @@ class BiliUploader(Upload):
     """
     platform = "bili"
 
-    async def upload_video(self, video_url, video_path, video_name, description=None, topics=None, collection=None):
+    async def upload_video(self, video_url, video_path, video_name, description=None, topics=None, collection=None,
+                           headless=False):
         try:
             self.logger.info(f"Uploading video '{video_name}' to {self.platform}...")
             # cookie 加载
@@ -26,7 +27,7 @@ class BiliUploader(Upload):
                 # 登录
                 self.logger.info(self.platform + ":登陆中")
                 try:
-                    browser = await playwright.chromium.launch(headless=False)
+                    browser = await playwright.chromium.launch(headless=headless)
                     context = await browser.new_context(storage_state=storage_state)
                     page = await context.new_page()
 

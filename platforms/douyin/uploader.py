@@ -17,7 +17,8 @@ class DouyinUploader(Upload):
     """
     platform = "douyin"
 
-    async def upload_video(self, video_url, video_path, video_name, description=None, topics=None, collection=None):
+    async def upload_video(self, video_url, video_path, video_name, description=None, topics=None, collection=None,
+                           headless=False):
         if topics is None:
             topics = []
         topics = topics + config.douyin_keywords
@@ -29,7 +30,7 @@ class DouyinUploader(Upload):
             async with (async_playwright() as playwright):
                 # 登录
                 self.logger.info(self.platform + ":登陆中")
-                browser = await playwright.chromium.launch(headless=False)
+                browser = await playwright.chromium.launch(headless=headless)
                 context = await browser.new_context(storage_state=storage_state)
                 page = await context.new_page()
 
