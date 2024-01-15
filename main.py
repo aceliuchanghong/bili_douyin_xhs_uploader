@@ -43,7 +43,8 @@ if __name__ == "__main__":
     parser.add_argument('--video_path', required=True, help="Path to the video file.")
     parser.add_argument('--video_name', required=True, help="Title of the video.")
     parser.add_argument('--description', required=False, default="", help="Description of the video.")
-    parser.add_argument('--headless', required=False, default="", help="headless")
+    parser.add_argument('--headless', action='store_true', help="Run in headless mode (default: %(default)s)",
+                        default=False)
 
     # Parse the arguments
     args = parser.parse_args()

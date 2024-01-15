@@ -57,7 +57,7 @@ python main.py --platforms bili --video_url "https://test" --video_path "files/t
 ```
 ### ubuntu环境
 ```shell
-python main.py --platforms douyin --video_url "https://test_ubuntu" --video_path "/home/aceliuchanghong/ftpfiles/liu/00.mp4" --video_name "你的身边有我们 你的背后是祖国" --description "你的身边有我们 你的背后是祖国" --headless True
+python main.py --platforms douyin --video_url "https://test_ubuntu" --video_path "/home/aceliuchanghong/ftpfiles/liu/00.mp4" --video_name "你的身边有我们 你的背后是祖国" --description "你的身边有我们 你的背后是祖国" --headless
 ```
 ### QA
 ```errorinfo
@@ -78,6 +78,5 @@ Browser logs:
 ║ <3 Playwright Team                                                                             ║
 ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
 A2:
---headless True
-
+--headless
 ```
