@@ -56,6 +56,8 @@ python main.py --platforms "douyin" --video_url "https://test" --video_path "fil
 python main.py --platforms "douyin" --video_url "https://test2" --video_path "files/test/00.mp4" --video_name "你的身边有我们 你的背后是祖国" --description "你的身边有我们 你的背后是祖国"
 
 python main.py --platforms "bili" --video_url "https://test" --video_path "files/test/11.mp4" --video_name "我只在乎你鄧麗君" --description "我只在乎你鄧麗君 琵琶 演奏"
+
+python main.py --platforms "toutiao" --video_url "https://test2" --video_path "files/test/burn-tool.mp4" --video_name "你的身边有我们 你的背后是祖国" --cover_path "files/test/01.jpg" --description "你的身边有我们 你的背后是祖国"
 ```
 ### Ubuntu
 ```shell

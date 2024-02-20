@@ -18,6 +18,11 @@ douyin_config = {
     "up_site2": "https://creator.douyin.com/creator-micro/content/publish?enter_from=publish_page",
     "check_site": "https://creator.douyin.com/creator-micro/content/manage"
 }
+toutiao_config = {
+    "cookie_path": "cookies/toutiao_cookies.json",
+    "up_site": "https://mp.toutiao.com/profile_v4/xigua/upload-video?from=toutiao_pc",
+    "check_site": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2"
+}
 xhs_config = {
     "cookie_path": "cookies/xhs_cookies.json",
     "up_site": "https://creator.xiaohongshu.com/publish/publish",
@@ -71,6 +76,15 @@ douyin_keywords = [
     "可爱女孩",
     "王者荣耀",
 ]
+
+toutiao_keywords = [
+    "搞笑",
+    "外国人",
+    "美女",
+    "可爱女孩",
+    "王者荣耀",
+]
+
 # 关键句
 key_sentence = [
     "为什么最能打拼的员工默默离职，却连一声问候都未曾收到",

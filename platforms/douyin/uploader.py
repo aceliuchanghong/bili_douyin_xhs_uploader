@@ -16,7 +16,7 @@ class DouyinUploader(Upload):
     """
     platform = "douyin"
 
-    async def upload_video(self, video_url, video_path, video_name, description=None, topics=None, collection=None,
+    async def upload_video(self, video_url, video_path, video_name, cover_path=None, description=None, topics=None, collection=None,
                            headless=False):
         if topics is None:
             topics = []

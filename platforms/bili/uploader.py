@@ -16,7 +16,7 @@ class BiliUploader(Upload):
     """
     platform = "bili"
 
-    async def upload_video(self, video_url, video_path, video_name, description=None, topics=None, collection=None,
+    async def upload_video(self, video_url, video_path, video_name, cover_path=None, description=None, topics=None, collection=None,
                            headless=False):
         try:
             self.logger.info(f"Uploading video '{video_name}' to {self.platform}...")
