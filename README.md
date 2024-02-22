@@ -2,6 +2,9 @@
 
 国内视频网站的uploader,用来批量上传视频
 
+### 示例
+![example_video_windows.gif](log%2Fexample_video_windows.gif)
+
 ### Install
 ```
 #pip list --format=freeze > requirements.txt
